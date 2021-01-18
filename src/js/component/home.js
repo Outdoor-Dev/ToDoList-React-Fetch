@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 //include images into your bundle
 import rigoImage from "../../img/rigo-baby.jpg";
@@ -10,7 +10,25 @@ export function Home() {
 		"Wash clothes",
 		"Clean house"
 	]);
-	const [userInput, setUserInput] = useState("");
+    const [userInput, setUserInput] = useState("");
+    
+    useEffect(() =>{
+        fetch('examples/example.json')
+	 .then(function(response) {
+		if (!response.ok) {
+	    throw Error(response.statusText);
+	 }
+   
+	    return response.json();
+	 })
+	  .then(function(responseAsJson) {
+   
+	    console.log(responseAsJson);
+	 })
+    .catch(function(error) {
+	    console.log('Looks like there was a problem: \n', error);
+    });
+    },[]);
 
 	const handleKeyUp = event => {
 		if (event.keyCode === 13 && userInput !== "") {
