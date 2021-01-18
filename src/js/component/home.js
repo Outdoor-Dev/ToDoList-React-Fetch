@@ -5,30 +5,25 @@ import rigoImage from "../../img/rigo-baby.jpg";
 
 //create your first component
 export function Home() {
-	const [task, setTask] = useState([
-		"Walk dog",
-		"Wash clothes",
-		"Clean house"
-	]);
-    const [userInput, setUserInput] = useState("");
-    
-    useEffect(() =>{
-        fetch('examples/example.json')
-	 .then(function(response) {
-		if (!response.ok) {
-	    throw Error(response.statusText);
-	 }
-   
-	    return response.json();
-	 })
-	  .then(function(responseAsJson) {
-   
-	    console.log(responseAsJson);
-	 })
-    .catch(function(error) {
-	    console.log('Looks like there was a problem: \n', error);
-    });
-    },[]);
+	const [task, setTask] = useState([""]);
+	const [userInput, setUserInput] = useState("");
+
+	useEffect(() => {
+		fetch("https://assets.breatheco.de/apis/fake/todos/user/pacho1018")
+			.then(function(response) {
+				if (!response.ok) {
+					throw Error(response.statusText);
+				}
+
+				return response.json();
+			})
+			.then(function(responseAsJson) {
+				setTask(responseAsJson);
+			})
+			.catch(function(error) {
+				console.log("Looks like there was a problem: \n", error);
+			});
+	}, []);
 
 	const handleKeyUp = event => {
 		if (event.keyCode === 13 && userInput !== "") {
@@ -59,7 +54,7 @@ export function Home() {
 					{task.map((value, index) => {
 						return (
 							<li className="list-group-item" key={index}>
-								{value}
+								{value.label}
 
 								<i
 									className="far fa-trash-alt"
