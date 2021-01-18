@@ -27,7 +27,58 @@ export function Home() {
 
 	const handleKeyUp = event => {
 		if (event.keyCode === 13 && userInput !== "") {
-			setTask(task.concat(userInput));
+			setTask(
+				task.concat({
+					label: userInput,
+					done: false
+				})
+			);
+
+			fetch(
+				"https://assets.breatheco.de/apis/fake/todos/user/pacho1018",
+				{
+					method: "PUT", // or 'POST'
+					body: JSON.stringify(
+						task.concat({
+							label: userInput,
+							done: false
+						})
+					), // data can be `string` or {object}!
+					headers: {
+						"Content-Type": "application/json"
+					}
+				}
+			)
+				.then(response => {
+					if (!response.ok) {
+						throw Error(response.statusText);
+					}
+
+					return response.json();
+				})
+				.then(response => {
+					console.log("Success:", response);
+					fetch(
+						"https://assets.breatheco.de/apis/fake/todos/user/pacho1018"
+					)
+						.then(function(response) {
+							if (!response.ok) {
+								throw Error(response.statusText);
+							}
+
+							return response.json();
+						})
+						.then(function(responseAsJson) {
+							setTask(responseAsJson);
+						})
+						.catch(function(error) {
+							console.log(
+								"Looks like there was a problem: \n",
+								error
+							);
+						});
+				})
+				.catch(error => console.error("Error:", error));
 			setUserInput("");
 		}
 	};
@@ -36,6 +87,43 @@ export function Home() {
 			(tasks, taskIndex) => index !== taskIndex
 		);
 		setTask(updatedList);
+		fetch("https://assets.breatheco.de/apis/fake/todos/user/pacho1018", {
+			method: "PUT", // or 'POST'
+			body: JSON.stringify(updatedList), // data can be `string` or {object}!
+			headers: {
+				"Content-Type": "application/json"
+			}
+		})
+			.then(response => {
+				if (!response.ok) {
+					throw Error(response.statusText);
+				}
+
+				return response.json();
+			})
+			.then(response => {
+				console.log("Success:", response);
+				fetch(
+					"https://assets.breatheco.de/apis/fake/todos/user/pacho1018"
+				)
+					.then(function(response) {
+						if (!response.ok) {
+							throw Error(response.statusText);
+						}
+
+						return response.json();
+					})
+					.then(function(responseAsJson) {
+						setTask(responseAsJson);
+					})
+					.catch(function(error) {
+						console.log(
+							"Looks like there was a problem: \n",
+							error
+						);
+					});
+			})
+			.catch(error => console.error("Error:", error));
 	};
 
 	return (
