@@ -5,7 +5,7 @@ import rigoImage from "../../img/rigo-baby.jpg";
 
 //create your first component
 export function Home() {
-	const [task, setTask] = useState([""]);
+	const [task, setTask] = useState([]);
 	const [userInput, setUserInput] = useState("");
 
 	useEffect(() => {
