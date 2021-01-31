@@ -127,11 +127,14 @@ export function Home() {
 	};
 
 	return (
-		<div className="container">
-			<h1 className="todo-title"> Todos</h1>
-			<div className="todo-list">
+		<div className="container d-flex justify-content-center">
+			<h1 className="todo-title text-white"> Things To Do</h1>
+			<div
+				className="todo-list mt-5  "
+				style={{ width: 500, height: 900 }}>
 				<input
-					className="tasks"
+					className="tasks mb-4 mt-5"
+					style={{ width: 300, height: 50 }}
 					type="text"
 					onChange={e => setUserInput(e.target.value)}
 					value={userInput}
@@ -141,11 +144,14 @@ export function Home() {
 				<ul className="list-group">
 					{task.map((value, index) => {
 						return (
-							<li className="list-group-item" key={index}>
+							<li
+								className="list-group-item"
+								key={index}
+								style={{ width: 400, height: 90 }}>
 								{value.label}
 
 								<i
-									className="far fa-trash-alt"
+									className="far fa-trash-alt d-flex justify-content-end "
 									onClick={() => itemDelete(index)}
 								/>
 							</li>

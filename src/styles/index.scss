@@ -1,13 +1,39 @@
 @import "~bootstrap/scss/bootstrap.scss";
 
-/* 
+body{
+    background-image: url("https://www.creativelive.com/blog/wp-content/uploads/2016/02/16001.jpg");
+   
+}
+.todo-title{
+    height:20px;
+    margin-right:-500px;
+    font-size:80px;
+   
+    -webkit-text-stroke: 1px black;
+    
+}
 
-    You can write your own styles here...
+.tasks{
     
+     margin-left:127px;
+     border:3px solid black;
+     font-size:30px;
     
-    ...Or you can use the import command to include 
-    other sylesheets into your bunde as well, e.j:
-    
-    import 'relative/path/to/stylesheet.scss';
+}
+.list-group-item{
+    font-size:40px;
+    margin-left:72px;
+    color:black;
+    border: 3px solid black;
+}
 
-*/
+.far{
+    margin-top:-42px;
+    color:black;
+}
+
+.container{
+    background-color: black;
+    opacity:0.75;
+    width:600px;
+}
