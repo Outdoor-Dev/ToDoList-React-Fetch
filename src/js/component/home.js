@@ -144,17 +144,19 @@ export function Home() {
 				<ul className="list-group">
 					{task.map((value, index) => {
 						return (
-							<li
-								className="list-group-item"
-								key={index}
-								style={{ width: 400, height: 90 }}>
-								{value.label}
+							<>
+								<li
+									className="list-group-item"
+									key={index}
+									style={{ width: 400, height: 90 }}>
+									{value.label}
+								</li>
 
 								<i
-									className="far fa-trash-alt d-flex justify-content-end "
+									className="far fa-trash-alt  "
 									onClick={() => itemDelete(index)}
 								/>
-							</li>
+							</>
 						);
 					})}
 				</ul>
