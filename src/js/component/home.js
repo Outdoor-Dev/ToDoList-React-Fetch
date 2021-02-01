@@ -136,7 +136,7 @@ export function Home() {
 			<h1 className="todo-title text-white"> Things To Do</h1>
 			<div className="todo-list mt-5  " style={{ width: 500 }}>
 				<input
-					className="tasks mb-4 mt-5"
+					className="tasks  mb-4 mt-5"
 					style={{ width: 300, height: 50 }}
 					type="text"
 					onChange={e => setUserInput(e.target.value)}
@@ -144,13 +144,13 @@ export function Home() {
 					onKeyUp={handleKeyUp}
 				/>
 
-				<ul className="list-group" style={{ width: 800 }}>
+				<ul className="list-group " style={{ width: 800 }}>
 					{task.map((value, index) => {
 						return (
 							<>
 								<span>
 									<li
-										className="list-group-item"
+										className="list-group-item "
 										key={index}
 										style={{ width: 400, height: 80 }}>
 										{value.label}

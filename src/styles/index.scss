@@ -18,14 +18,19 @@ body{
      margin-left:127px;
      border:3px solid black;
      font-size:30px;
+     font-weight: 700;
+    
      
     
 }
 .list-group-item{
     font-size:40px;
     margin-left:72px;
+    font-weight: 700;
     color:black;
+    
     border: 3px solid black;
+   
      overflow: auto;  
      white-space: nowrap;  
              
@@ -56,4 +61,5 @@ body{
       display: flex;
   flex-direction: row; 
   flex-wrap: wrap;
+  
 }
