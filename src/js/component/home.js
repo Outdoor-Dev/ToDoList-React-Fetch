@@ -8,6 +8,10 @@ export function Home() {
 	const [task, setTask] = useState([]);
 	const [userInput, setUserInput] = useState("");
 
+	//state, use state list empty set boolean conditional
+	// list empty set true, min-height else
+	// adding list empty goes to false height auto
+
 	useEffect(() => {
 		fetch("https://assets.breatheco.de/apis/fake/todos/user/pacho1018")
 			.then(function(response) {
@@ -129,9 +133,7 @@ export function Home() {
 	return (
 		<div className="container d-flex justify-content-center">
 			<h1 className="todo-title text-white"> Things To Do</h1>
-			<div
-				className="todo-list mt-5  "
-				style={{ width: 500, height: 900 }}>
+			<div className="todo-list mt-5  " style={{ width: 500 }}>
 				<input
 					className="tasks mb-4 mt-5"
 					style={{ width: 300, height: 50 }}
@@ -149,7 +151,7 @@ export function Home() {
 									<li
 										className="list-group-item"
 										key={index}
-										style={{ width: 400, height: 90 }}>
+										style={{ width: 400, height: 80 }}>
 										{value.label}
 									</li>
 								</span>
