@@ -141,21 +141,24 @@ export function Home() {
 					onKeyUp={handleKeyUp}
 				/>
 
-				<ul className="list-group">
+				<ul className="list-group" style={{ width: 800 }}>
 					{task.map((value, index) => {
 						return (
 							<>
-								<li
-									className="list-group-item"
-									key={index}
-									style={{ width: 400, height: 90 }}>
-									{value.label}
-								</li>
-
-								<i
-									className="far fa-trash-alt  "
-									onClick={() => itemDelete(index)}
-								/>
+								<span>
+									<li
+										className="list-group-item"
+										key={index}
+										style={{ width: 400, height: 90 }}>
+										{value.label}
+									</li>
+								</span>
+								<span>
+									<i
+										className="far fa-trash-alt  "
+										onClick={() => itemDelete(index)}
+									/>
+								</span>
 							</>
 						);
 					})}

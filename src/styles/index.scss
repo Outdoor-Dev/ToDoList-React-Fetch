@@ -36,12 +36,22 @@ body{
 }
 
 .far{
-    margin-top:-42px;
-    color:black;
+    position:absolute;
+    margin-top:20px;
+    margin-left:20px;
+    color:white;
+   font-size:55px;
+   
+  
 }
 
 .container{
     background-color: black;
     opacity:0.75;
     width:600px;
+}
+.list-group{
+      display: flex;
+  flex-direction: row; 
+  flex-wrap: wrap;
 }
