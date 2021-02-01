@@ -18,6 +18,7 @@ body{
      margin-left:127px;
      border:3px solid black;
      font-size:30px;
+     
     
 }
 .list-group-item{
@@ -25,13 +26,8 @@ body{
     margin-left:72px;
     color:black;
     border: 3px solid black;
-    
-                margin: 4px, 4px;  
-                padding: 4px;  
-              
-                width: 300px;  
-                overflow: auto;  
-                white-space: nowrap;  
+     overflow: auto;  
+     white-space: nowrap;  
              
 }
 
@@ -50,6 +46,8 @@ body{
     opacity:0.75;
     width:600px;
     height: auto;
+    padding-bottom:50px;
+    margin-top:50px;
    
     
        

@@ -11,6 +11,7 @@ export function Home() {
 	//state, use state list empty set boolean conditional
 	// list empty set true, min-height else
 	// adding list empty goes to false height auto
+	// useRef hook
 
 	useEffect(() => {
 		fetch("https://assets.breatheco.de/apis/fake/todos/user/pacho1018")
